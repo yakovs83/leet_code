@@ -1,6 +1,6 @@
-use leet_code::add_two_numbers::*;
+use leet_code::length_of_longest_substring::length_of_longest_substring;
 
 fn main() {
-  let res = add_two_numbers(list_from_vec(vec![1, 2, 3]), list_from_vec(vec![9, 8, 9]));
+  let res = length_of_longest_substring("anviaj".into());
   println!("The answer is {:?}", res);
 }
