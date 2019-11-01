@@ -1,6 +1,6 @@
-use leet_code::length_of_longest_substring::length_of_longest_substring;
+use leet_code::zigzag_conversion;
 
 fn main() {
-  let res = length_of_longest_substring("anviaj".into());
+  let res = zigzag_conversion::convert("PAYPALISHIRING".to_owned(), 3);
   println!("The answer is {:?}", res);
 }
