@@ -1,11 +1,11 @@
-//use leet_code::regex_matching::*;
+use leet_code::reverse_k_group::*;
 
 fn main() {
-  // let s = "aab".to_owned();
-  // let p = "c*a*b".to_owned();
-  // let res = is_match(s.clone(), p.clone());
-  // println!(
-  //   "\nString is {:?}\nPattern is {:?}\nResult is {:?}",
-  //   s, p, res
-  // );
+    let a = vec![1, 2, 3, 4, 5];
+    let l = list_from_vec(a);
+    println!("The input list is {:?}", l);
+    println!(
+        "Reversal result - {:?}",
+        list_to_vec(&reverse_k_group(l, 4))
+    );
 }

@@ -6,6 +6,7 @@ pub mod longest_palindrome;
 pub mod palindrome_number;
 pub mod regex_matching;
 pub mod reverse_integer;
+pub mod reverse_k_group;
 pub mod three_sum;
 pub mod three_sum_closest;
 pub mod trie;

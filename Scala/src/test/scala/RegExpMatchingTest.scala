@@ -20,7 +20,14 @@ class RegExpMatchingTest extends FlatSpec {
   tests.foreach {
     case (s, p, res, desc) =>
       it should s"${if (res) "" else "not"} work for $desc: $s vs $p" in {
-        assert(isMatch(s, p))
+        assert(isMatch(s, p) == res)
+      }
+  }
+  behavior of "isMatch2"
+  tests.foreach {
+    case (s, p, res, desc) =>
+      it should s"${if (res) "" else "not"} work for $desc: $s vs $p" in {
+        assert(isMatch2(s, p) == res)
       }
   }
   // "isMatch" should "work for a single letter match" in {

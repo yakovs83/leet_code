@@ -1,0 +1,6 @@
+#FileLock
+#Sat Jun 27 18:28:07 MDT 2020
+hostName=localhost
+id=172f852faeeb8e255d4303b276b592115643a86f2be
+method=file
+server=localhost\:37137

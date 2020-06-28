@@ -57,4 +57,32 @@ object Solution {
     }
     dpMatch(s.toList, pattern)
   }
+
+  def isMatch2(s: String, p: String): Boolean = {
+    val sl = s.toList
+    val pl = p.toList
+    val cache = collection.mutable.Map.empty[(Int, Int), Boolean]
+    def dpMatch(s: List[Char], p: List[Char]): Boolean = {
+      val k = (s.length, p.length)
+      cache.getOrElse(
+        k, {
+          cache.update(
+            k,
+            (s, p) match {
+              case (s1 @ c1 :: t1, p2 @ c2 :: '*' :: t2)
+                  if (c1 == c2 || c2 == '.') =>
+                dpMatch(t1, p2) || dpMatch(s1, t2)
+              case (s1, _ :: '*' :: t2) => dpMatch(s1, t2)
+              case (c1 :: t1, c2 :: t2) =>
+                if (c1 == c2 || c2 == '.') dpMatch(t1, t2) else false
+              case (Nil, _ :: _) | (_ :: _, Nil) => false
+              case (Nil, Nil)                    => true
+            }
+          )
+          cache(k)
+        }
+      )
+    }
+    dpMatch(sl, pl)
+  }
 }
